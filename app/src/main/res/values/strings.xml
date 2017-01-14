@@ -2,4 +2,6 @@
     <string name="app_name">SLO Safe Ride</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_main">Map</string>
+    <string name="facebook_app_id">1827725354117086</string>
+    <string name="fb_login_protocol_scheme">fb1827725354117086</string>
 </resources>

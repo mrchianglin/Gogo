@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "949977309562",
+    "project_id": "firebase-slo-safe-ride"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949977309562:android:cd7bbb8fdd1290ef",
+        "android_client_info": {
+          "package_name": "chiangli.edu.calpoly.edu.slosaferide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgt10bdC-RSNv85USE7vrrtfKbSpv8bag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
