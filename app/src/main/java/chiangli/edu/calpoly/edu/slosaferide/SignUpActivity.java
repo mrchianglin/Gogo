@@ -1,7 +1,7 @@
 package chiangli.edu.calpoly.edu.slosaferide;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class SignUpActivity extends AppCompatActivity {
 

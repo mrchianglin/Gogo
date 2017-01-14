@@ -66,26 +66,10 @@
         android:layout_alignParentStart="true"
         android:id="@+id/DOB" />
 
-    <RadioButton
-        android:text="Male"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/DOB"
-        android:layout_alignParentStart="true"
-        android:id="@+id/Male" />
-
-    <RadioButton
-        android:text="Female"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/DOB"
-        android:layout_toEndOf="@+id/Male"
-        android:id="@+id/Female" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Male"
+        android:layout_below="@+id/DOB"
         android:layout_alignParentStart="true"
         android:id="@+id/orText"
         android:text="Or" />
