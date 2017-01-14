@@ -9,15 +9,71 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
+
+    CallbackManager callbackManager;
+    private LoginButton loginButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_home);
+
+        //Facebook SDK stuff
+        callbackManager = CallbackManager.Factory.create();
+        loginButton = (LoginButton)findViewById(R.id.login_button);
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+            }
+        });
+
+
+        //End Facebook stuff
+
+//
+//        // Configure sign-in to request the user's ID, email address, and basic
+//        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestEmail()
+//                .build();
+//
+//        // Build a GoogleApiClient with access to the Google Sign-In API and the
+//        // options specified by gso.
+//        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .enableAutoManage(this, this)
+//                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+//                .build();
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         Button signup = (Button)findViewById(R.id.signUp);
         signup.setOnClickListener(new View.OnClickListener() {
