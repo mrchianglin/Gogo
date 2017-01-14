@@ -1,7 +1,9 @@
 package chiangli.edu.calpoly.edu.slosaferide;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -18,12 +20,14 @@ public class ScanActivity extends AppCompatActivity {
     @BindView(R.id.CreditCardNumber) EditText ccNumber;
     @BindView(R.id.CreditCardDate)   EditText ccDate;
 //    @BindView(R.id.CreditCardDate) DatePicker date;
-
+    @BindView(R.id.submitButton)     Button submit;
     protected static final String TAG = "ScanActivity";
 
     private Button scanButton;
     private TextView resultTextView;
 
+    private String number;
+    private String date;
     private int MY_SCAN_REQUEST_CODE = 100; // arbitrary int
 
     /**
@@ -39,12 +43,32 @@ public class ScanActivity extends AppCompatActivity {
         resultTextView = (TextView) findViewById(R.id.resultTextView);
         scanButton = (Button) findViewById(R.id.scanButton);
 
+        Button submit = (Button) findViewById(R.id.submitButton);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              new AlertDialog.Builder(ScanActivity.this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Confirm Payment")
+                        .setMessage("Are you confirming a payment of flat-rate $10?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // confirm payment
+                                // finish();
+                                // Go back to MainActivity
+                            }
+
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+            }
+        });
 
         resultTextView.setText("card.io library version: " + CardIOActivity.sdkVersion() + "\nBuilt: " + CardIOActivity.sdkBuildDate());
         Log.e(TAG, "onCreate: ");
     }
-
-
 
     @Override
     protected void onResume() {
@@ -102,7 +126,7 @@ public class ScanActivity extends AppCompatActivity {
 
             if (scanResult.isExpiryValid()) {
                 resultStr += "Expiration Date: " + scanResult.expiryMonth + "/" + scanResult.expiryYear + "\n";
-
+                ccDate.setText(scanResult.expiryMonth + "/" + scanResult.expiryYear);
             }
 
             if (scanResult.cvv != null) {

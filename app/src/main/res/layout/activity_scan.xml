@@ -10,25 +10,25 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:maxLength="16"
+        android:maxLength="19"
         android:hint="Card Number"
         android:id="@+id/CreditCardNumber" />
     
-    <!--<EditText-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:inputType="date"-->
-        <!--android:ems="10"-->
-        <!--android:maxLength="6"-->
-        <!--android:hint="Exp Date"-->
-        <!--android:id="@+id/CreditCardDate"/>-->
-    <DatePicker
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
-        android:id="@+id/CreditCardDate"
-        ></DatePicker>
+        android:inputType="date"
+        android:ems="10"
+        android:maxLength="6"
+        android:hint="Exp Date"
+        android:id="@+id/CreditCardDate"/>
+    <!--<DatePicker-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:datePickerMode="spinner"-->
+        <!--android:calendarViewShown="false"-->
+        <!--android:id="@+id/CreditCardDate"-->
+        <!--&gt;</DatePicker>-->
 
     <Button
         android:id="@+id/scanButton"
