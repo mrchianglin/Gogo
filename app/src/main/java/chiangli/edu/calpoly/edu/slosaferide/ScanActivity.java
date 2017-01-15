@@ -40,7 +40,6 @@ public class ScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scan);
         ButterKnife.bind(this);
 
-        resultTextView = (TextView) findViewById(R.id.resultTextView);
         scanButton = (Button) findViewById(R.id.scanButton);
 
         Button submit = (Button) findViewById(R.id.submitButton);
@@ -66,7 +65,7 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
 
-        resultTextView.setText("card.io library version: " + CardIOActivity.sdkVersion() + "\nBuilt: " + CardIOActivity.sdkBuildDate());
+//        resultTextView.setText("card.io library version: " + CardIOActivity.sdkVersion() + "\nBuilt: " + CardIOActivity.sdkBuildDate());
         Log.e(TAG, "onCreate: ");
     }
 
@@ -74,11 +73,11 @@ public class ScanActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.e(TAG, "onResume: " + CardIOActivity.canReadCardWithCamera() );
-        if (CardIOActivity.canReadCardWithCamera()) {
-            scanButton.setText("Scan a credit card with card.io");
-        } else {
-            scanButton.setText("Enter credit card information");
-        }
+//        if (CardIOActivity.canReadCardWithCamera()) {
+//            scanButton.setText("Scan a credit card with card.io");
+//        } else {
+//            scanButton.setText("Enter credit card information");
+//        }
     }
 
     public void onScanPress(View v) {
@@ -144,7 +143,7 @@ public class ScanActivity extends AppCompatActivity {
         } else {
             resultStr = "Scan was canceled.";
         }
-        resultTextView.setText(resultStr);
+//        resultTextView.setText(resultStr);
 
     }
 }

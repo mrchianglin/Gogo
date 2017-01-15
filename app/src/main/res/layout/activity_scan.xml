@@ -11,6 +11,8 @@
         android:inputType="number"
         android:ems="10"
         android:maxLength="19"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="2dp"
         android:hint="Card Number"
         android:id="@+id/CreditCardNumber" />
     
@@ -20,34 +22,23 @@
         android:inputType="date"
         android:ems="10"
         android:maxLength="6"
+        android:layout_marginBottom="10dp"
         android:hint="Exp Date"
         android:id="@+id/CreditCardDate"/>
-    <!--<DatePicker-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:datePickerMode="spinner"-->
-        <!--android:calendarViewShown="false"-->
-        <!--android:id="@+id/CreditCardDate"-->
-        <!--&gt;</DatePicker>-->
 
     <Button
         android:id="@+id/scanButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Scan a credit card with card.io"
+        android:background="@drawable/gogoscan"
         android:onClick="onScanPress"/>
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.95"
-        android:text=""/>
-
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SUBMIT"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="260dp"
         android:id="@+id/submitButton" />
 
 </LinearLayout>
