@@ -3,53 +3,45 @@ package chiangli.edu.calpoly.edu.slosaferide;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
 
-    CallbackManager callbackManager;
-    private LoginButton loginButton;
+//    CallbackManager callbackManager;
+//    private LoginButton loginButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
+//        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_home);
 
         //Facebook SDK stuff
-        callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton)findViewById(R.id.login_button);
-
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException e) {
-
-            }
-        });
-
+//        callbackManager = CallbackManager.Factory.create();
+//        loginButton = (LoginButton)findViewById(R.id.login_button);
+//
+//        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+//            @Override
+//            public void onSuccess(LoginResult loginResult) {
+//
+//            }
+//
+//            @Override
+//            public void onCancel() {
+//
+//            }
+//
+//            @Override
+//            public void onError(FacebookException e) {
+//
+//            }
+//        });
+//
 
         //End Facebook stuff
 
@@ -67,16 +59,11 @@ public class HomeActivity extends AppCompatActivity {
 //                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
 //                .build();
 
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-        Button signup = (Button)findViewById(R.id.signUp);
-        signup.setOnClickListener(new View.OnClickListener() {
+        Button login = (Button)findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SignInActivity.class);
                 HomeActivity.this.startActivity(intent);
             }
         });
@@ -88,11 +75,11 @@ public class HomeActivity extends AppCompatActivity {
                 HomeActivity.this.startActivity(intent);
             }
         });
-        TextView signin = (TextView) findViewById(R.id.signIn);
-        signin.setOnClickListener(new View.OnClickListener() {
+        TextView signup = (TextView) findViewById(R.id.signUp);
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                Intent intent = new Intent(HomeActivity.this, SignInActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SignUpActivity.class);
                 HomeActivity.this.startActivity(intent);
             }
         });
