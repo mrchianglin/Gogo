@@ -78,7 +78,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignInActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ScanActivity">
 
         </activity>

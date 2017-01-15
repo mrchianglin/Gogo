@@ -4,59 +4,62 @@
     android:id="@+id/activity_sign_in"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="chiangli.edu.calpoly.edu.slosaferide.SignInActivity">
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In With Email"
-        android:id="@+id/textView" />
+        android:theme="@style/AppTheme.AppBarOverlay">
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerSignIn"
+        android:layout_marginTop="-25dp"
+        android:src="@drawable/gogoheader"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="Email"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="48dp"
+        android:layout_centerInParent="true"
+        android:ems="15"
+        android:id="@+id/editTextSignIn"
+        android:layout_below="@+id/headerSignIn"
         android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
+        android:layout_centerInParent="true"
         android:hint="Password"
-        android:ems="10"
-        android:layout_below="@+id/editText"
+        android:ems="15"
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="24dp"
+        android:layout_below="@+id/editTextSignIn"
         android:layout_alignParentStart="true"
         android:id="@+id/editText2" />
 
-    <TextView
-        android:text="TextView"
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="8dp"
         android:layout_below="@+id/editText2"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView2" />
+        android:background="@drawable/gogologin"/>
 
-    <Button
-        android:text="FACEBOOK"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:id="@+id/button2" />
-
-    <Button
-        android:text="GOOGLE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button2"
-        android:layout_toEndOf="@+id/button2"
-        android:id="@+id/button3" />
-
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Don't have an account? Sign up"
+        android:id="@+id/signUpIn"
+        android:layout_below="@+id/login"/>
 </RelativeLayout>

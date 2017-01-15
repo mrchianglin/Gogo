@@ -23,7 +23,7 @@ public class DisclaimerActivity extends AppCompatActivity {
         // wait 5 seconds
         // go to next activity
 
-        new CountDownTimer(5000, 1000) {
+        new CountDownTimer(2000, 1000) {
             public void onFinish() {
                 Intent startActivity = new Intent(DisclaimerActivity.this, HomeActivity.class);
                 DisclaimerActivity.this.startActivity(startActivity);

@@ -28,10 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/gogoor"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="26dp"
         android:layout_below="@+id/quickRide"
         android:layout_centerInParent="true"
-        android:paddingTop="26px"
-        android:paddingBottom="26px"
         android:src="@drawable/gogoor"/>
 
     <Button
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/login"
         android:layout_centerInParent="true"
-        android:paddingBottom="46px"
+        android:layout_marginBottom="26dp"
         android:layout_below="@+id/gogoor"
         android:background="@drawable/gogologin"/>
 
@@ -48,7 +48,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Don't have an account? Sign up"
-        android:paddingTop="60px"
         android:id="@+id/signUp"
         android:layout_below="@+id/login"/>
     <!--<com.facebook.login.widget.LoginButton-->
